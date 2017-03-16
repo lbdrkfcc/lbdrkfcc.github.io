@@ -1,0 +1,428 @@
+/*button01*/
+
+.button01{
+    display: inline-block;
+    position: relative;
+    padding: 10px 30px;
+    //border: solid 2px darkblue;
+    //box-shadow: 0px 0px 0px 1px darkblue;
+    color: darkblue;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    z-index: 1;
+}
+
+.button01::before{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    //border: solid 2px coral;
+    box-shadow: 0px 0px 0px 1px coral;
+    background: transparent;
+    z-index: -1;
+}
+
+.button01::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    //border: solid 2px darkblue;
+    box-shadow: 0px 0px 0px 1px darkblue;
+    //background: #fff;
+    z-index: -1;
+}
+
+.button01:hover::before{
+    background: coral;
+}
+
+.button01:hover::after{
+    background: white;
+}
+
+.button01:active{
+    transition: .1s;
+    //transform: translateX(5px);
+    transform: translate(5px, 5px);
+}
+.button01:active::before{
+    transition: .1s;
+    top: 0px;
+    left: 0px;
+}
+
+/*button02*/
+
+.button02{
+    display: inline-block;
+    position: relative;
+    padding: 10px 30px;
+    //border: solid 2px darkblue;
+    //box-shadow: 0px 0px 0px 1px darkblue;
+    color: darkblue;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    z-index: 1;
+}
+
+.button02::before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    //border: solid 2px coral;
+    box-shadow: 0px 0px 0px 1px coral;
+    background: transparent;
+    z-index: -1;
+}
+
+.button02::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    //border: solid 2px darkblue;
+    box-shadow: 0px 0px 0px 1px darkblue;
+    background: #fff;
+    z-index: -1;
+}
+
+.button02:hover::before{
+    transition: .1s;
+    top: 5px;
+    left: 5px;
+}
+.button02:active{
+    transition: .1s;
+    //transform: translateX(5px);
+    transform: translate(5px, 5px);
+}
+.button02:active::before{
+    transition: .1s;
+    top: 0px;
+    left: 0px;
+}
+
+/*button03*/
+
+.button03{
+    display: inline-block;
+    position: relative;
+    padding: 10px 50px;
+    //border: solid 2px darkblue;
+    box-shadow: 0px 0px 0px 1px darkblue;
+    color: darkblue;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: transparen;
+    z-index: auto;
+}
+
+.button03>span{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    //padding: 10px 50px;
+    //border: solid 2px coral;
+    box-shadow: 0px 0px 0px 1px darkblue;
+    color: coral;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    z-index: -1;
+}
+
+.button03:hover span{
+    //transition: .1s;
+    box-shadow: 0px 0px 0px 1px coral;
+}
+.button03:active span{
+    transition: .1s;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0px 0px 0px 1px darkblue;
+}
+.button03:active{
+    transition: .1s;
+    transform: translate(5px, 5px);
+}
+
+/*button04*/
+
+.button04{
+    display: inline-block;
+    position: relative;
+    padding: 10px 50px;
+    //border: solid 2px darkblue;
+    border-left: solid 2px darkblue;
+    border-right: solid 2px darkblue;
+    border-bottom: solid 2px darkblue;
+    //box-shadow: 0px 0px 0px 1px darkblue;
+    color: darkblue;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: transparen;
+    z-index: auto;
+}
+
+.button04::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    border-top: solid 2px darkblue;
+    transition: .2s;
+}
+
+.button04::after{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 70%;
+    border-top: solid 2px white;
+    transition: .2s;
+}
+
+.button04:hover::before{
+    transition: .2s;
+    width: 100%;
+}
+
+.button04:hover::after{
+    transition: .2s;
+    width: 0%;
+}
+
+.button04:active{
+    transition: .1s;
+    transform: scale(.95);
+}
+
+/*button05*/
+
+.button05{
+    display: inline-block;
+    position: relative;
+    padding: 10px 30px;
+    //border: solid 1px coral;
+    //box-shadow: 8px 8px 10px 0px rgba(0,0,0,0.7);
+    background: #efefef;
+    color: darkblue;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    z-index: 1;
+}
+
+.button05:hover{
+    transition: .1s;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.7);
+}
+
+.button05:active{
+    transition: .1s;
+    box-shadow: none;
+    transform: translate(5px, 5px);
+}
+
+/*button06*/
+
+.button06{
+    display: inline-block;
+    position: relative;
+    padding: 10px 50px;
+    //border: solid 2px darkblue;
+    box-shadow: 0px 0px 0px 1px darkblue;
+    color: darkblue;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: transparen;
+    //z-index: 1;
+    opacity: .99;
+}
+
+.button06>span{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    //padding: 10px 50px;
+    //border: solid 2px coral;
+    box-shadow: 0px 0px 0px 1px coral;
+    color: coral;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    //z-index: -1;
+    //opacity: .99;
+}
+
+.button06:hover{
+    box-shadow: 0px 0px 0px 1px coral;
+    color: coral;
+}
+
+.button06:hover span{
+    box-shadow: 0px 0px 0px 1px darkblue;
+}
+
+.button06:active{
+    transition: .1s;
+    transform: translate(5px, 5px);
+    background: coral;
+    color: #fff;
+}
+
+.button06:active span{
+    transition: .1s;
+    box-shadow: none;
+}
+
+/*button07*/
+
+.button07{
+    display: inline-block;
+    position: relative;
+    background: darkblue;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+}
+.button07:hover{
+    background: blue;
+}
+.button07:active{
+    box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.5);
+}
+
+/*button08*/
+
+.button08{
+    display: block;
+    float: left;
+    position: relative;
+    background: darkblue;
+    width: 50%;
+    margin: 0;
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+}
+.button08:hover{
+    background: blue;
+}
+.button08:active{
+    box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.5);
+}
+.button08+.alt{
+    background: coral;
+}
+.button08+.alt:hover{
+    background: orange;
+}
+
+/*button09*/
+
+.button09{
+    position: relative;
+    font-size: 20px;
+    margin-left: 50px;
+}
+.button09:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 10px;
+}
+.button09:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -2px;
+    width: 25px;
+    height: 25px;
+    background: #333;
+    border-radius: 50px
+}
+
+#button09:checked .button09{
+    color: red;
+}
+
+/*button10*/
+.button10{
+    position: relative;
+    font-size: 20px;
+    margin-left: 50px;
+}
+.button10:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 20px;
+    background: green;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 10px 1px rgba(0,0,0,0.5);
+}
+.button10:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 1px;
+    width: 17px;
+    height: 17px;
+    background: #ccc;
+    border-radius: 50px;
+    margin-left: 2px;
+    transition: .1s;
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);
+}
+
+#button10:checked+.button10:before{
+    background: red;
+    transition: .1s;
+}
+#button10:checked+.button10:after{
+    margin-left: 21px;
+    transition: .1s;
+}
