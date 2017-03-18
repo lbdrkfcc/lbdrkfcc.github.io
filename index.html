@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <meta name="description" content="#" />
+    <meta name="description" content="заборы">
+    <meta name="keywords" content="заборы">
     
-    <title>Стартовый шаблон</title>
+    <title>Заборы</title>
     <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
     
     <!-- Bootstrap -->
@@ -29,12 +30,15 @@
         <header class="header">
             <div class="container">
                 <div class="row">
-                    <div class="header__left">
-                        <div class="logo">
-                            Логотип
-                        </div>
+                    <div class="col-sm-6">
+                        <a href="#" class="page-link">
+                            <div class="logo">
+                                Логотип
+                            </div>
+                        </a>
+                        
                     </div>
-                    <div class="header__right">
+                    <div class="col-sm-6 header__right">
                         <div class="header__address">
                             <span>г. Ярославль, пр-т Октября 123</span>
                             <span>тел. 56-56-66</span>
@@ -53,13 +57,13 @@
                     <div class="main_title__big">Самые низкие цены - 600<span>р/п.м</span></div>
                     <div class="main_title__small">металлопрофиль / деревянный / сетка рабица</div>
                 </h1>
-                <form action="" class="form section-top__form">
+                <form class="form section-top__form">
                     <div class="form-container">
                         <div class="form__title">
                             Оставьте заявку на расчёт стоимости и получите скидку
                         </div>
-                        <input type="text" class="input-text" placeholder="Имя" name="user-name">
-                        <input type="text" class="input-text" placeholder="Телефон" name="user-phone">
+                        <input type="text" class="input-text" placeholder="Имя" name="user_name" required>
+                        <input type="text" class="input-text" placeholder="Телефон" name="user_phone" required>
                         <input type="submit" class="btn btn-submit" value="Отправить">
                     </div>
                 </form>                
@@ -71,7 +75,7 @@
         <div class="container">
             <div class="row">
                 <div class="product">
-                    <div class="product__left">
+                    <div class="col-sm-6">
                         <div class="product-header">
                             <div class="product__title">
                                 Деревянный забор
@@ -101,7 +105,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product__right">
+                    <div class="col-sm-6">
                         <div class="product-photo">
                             <img src="img/fance.jpg" alt="" class="product__img">
                         </div>
@@ -112,7 +116,7 @@
                 </div>
                 
                 <div class="product">
-                    <div class="product__left">
+                    <div class="col-sm-6">
                         <div class="product-header">
                             <div class="product__title">
                                 Забор из металлопрофиля
@@ -137,7 +141,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product__right">
+                    <div class="col-sm-6">
                         <div class="product-photo">
                             <img src="img/fance.jpg" alt="" class="product__img">
                         </div>
@@ -148,7 +152,7 @@
                 </div>
                 
                 <div class="product">
-                    <div class="product__left">
+                    <div class="col-sm-6">
                         <div class="product-header">
                             <div class="product__title">
                                 Забор сетка рабица
@@ -179,7 +183,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product__right">
+                    <div class="col-sm-6">
                         <div class="product-photo">
                             <img src="img/fance.jpg" alt="" class="product__img">
                         </div>
@@ -199,10 +203,23 @@
                 </div>
             </div>
         </div>
+        
+        
     </footer>
     
     <!-- Modal -->
-    
+        <div class="popup mfp-hide" id="modal">
+            <form class="form popup__form">
+                <div class="form-container">
+                    <div class="form__title">
+                        Заказать забор
+                    </div>
+                    <input type="text" class="input-text" placeholder="Имя" name="user_name" required>
+                    <input type="text" class="input-text" placeholder="Телефон" name="user_phone" required>
+                    <input type="submit" class="btn btn-submit" value="Отправить">
+                </div>
+            </form>
+        </div>
     <!-- End Modal -->
     <!-- jQuery -->
     <script src="js/jquery_1_12_4.min.js"></script>
@@ -217,7 +234,14 @@
     <script src="js/scripts.js"></script>
     <script>
         $(document).ready(function(){
-	
+            
+	        $('button').magnificPopup({
+              items: {
+                  src: '#modal',
+                  type: 'inline'
+              }
+            });
+            
         });
     </script>
   </body>
