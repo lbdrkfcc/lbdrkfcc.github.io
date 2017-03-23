@@ -26,7 +26,7 @@
     <![endif]-->
   </head>
   <body>
-    <div class="section-top">
+    <div class="section-top parallax-window">
         <header class="header">
             <div class="container">
                 <div class="row">
@@ -105,7 +105,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="product-photo">
-                            <img src="img/pic/wood-fance.png" alt="деревянный забор" class="product__img">
+                            <img src="img/pic/wood-fance.jpg" alt="деревянный забор" class="product__img">
                         </div>
                         <div class="product-btn">
                             <button class="btn btn-order">Заказать</button>
@@ -157,7 +157,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="product-photo">
-                            <img src="img/pic/metall-fance.png" alt="забор из металлопрофиля" class="product__img">
+                            <img src="img/pic/metall-fance.jpg" alt="забор из металлопрофиля" class="product__img">
                         </div>
                         <div class="product-btn">
                             <button class="btn btn-order">Заказать</button>
@@ -217,7 +217,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="product-photo">
-                            <img src="img/pic/rabica-fance.png" alt="забор сетка-рабица" class="product__img">
+                            <img src="img/pic/rabica-fance.jpg" alt="забор сетка-рабица" class="product__img">
                         </div>
                         <div class="product-btn">
                             <button class="btn btn-order">Заказать</button>
@@ -315,6 +315,7 @@
     <script src="libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="libs/animate/animate-css.js"></script>
     <script src="libs/Magnific-Popup/jquery.magnific-popup.min.js"></script>
+    <script src="libs/parallax.js/parallax.min.js"></script>
     <script src="js/plugins-scroll.js"></script>
     <script src="js/maskedinput.js"></script>
     
@@ -329,6 +330,8 @@
                   type: 'inline'
               }
             });
+            
+            $('.parallax-window').parallax({imageSrc: 'img/zaborbg.jpg'});
             
         });
     </script>
