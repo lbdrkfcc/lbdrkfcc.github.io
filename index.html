@@ -1,410 +1,115 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-<!--    <base href="#" target="_blank"/>-->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UI</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="OwlCarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     
-    <meta name="description" content="заборы">
-    <meta name="keywords" content="заборы">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="OwlCarousel/owl.carousel.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .icon-round{
+            background-color: brown;
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+        }
+        .footer{
+            min-height: 50px;
+            background-color: antiquewhite;
+            width: 100%;
+            position: absolute;
+            margin: auto;
+            bottom: 0;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .box{
+            background-color: beige;
+            width: 100px;
+            height: 150px;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
     
-    <title>Заборы</title>
-    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-    
-    <!-- Bootstrap -->
-    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link href="libs/animate/animate.css" rel="stylesheet">
-    <link href="libs/Magnific-Popup/magnific-popup.css" rel="stylesheet">
-    <!-- Styles -->
-    <link href="css/styles.min.css" rel="stylesheet">
-    
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="section-top parallax-window">
-        <header class="header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <a href="#" class="page-link">
-                            <div class="logo">
-                                <img src="img/logo.png" alt="Байкал">
-                            </div>
-                        </a>
-                        
+    <script type="text/babel">
+        let x = 'World';
+        class App extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <Carousel />
                     </div>
-                    <div class="col-sm-6 header__right">
-                        <div class="header__address">
-                            <span>г. Ярославль, пр-т Октября 123</span>
-                            <span>тел. 8(920)655-41-46</span>
-                        </div>
-                        <div class="header__order">
-                            <button class="btn btn-order btn-callback-modal">Заказать обратный звонок</button>
-                        </div>
+                );
+            }
+        }
+        class Carousel extends React.Component {
+            render() {
+                return (
+                    <div className="owl-carousel">
+                        <Box>1</Box>
+                        <Box>2</Box>
+                        <Box>3</Box>
+                        <Box>4</Box>
                     </div>
-                </div>
-            </div>
-        </header>
-        <div class="container">
-            <div class="row">
-                <h1 class="main_title">
-                    <span class="main_title__big-colored">Строительство заборов под ключ</span>
-                    <span class="main_title__big">Самые низкие цены - 600<span>р/п.м</span></span>
-                    <span class="main_title__small">Ярославль и пригород (50 км. от города)</span>
-                    <span class="main_title__small">металлопрофиль / деревянный / сетка рабица</span>
-                </h1>
-                <form class="form section-top__form" id="request">
-                    <div class="form-container">
-                        <div class="form__title">
-                            Оставьте заявку на расчёт стоимости и получите скидку на забор
-                        </div>
-                        <input type="text" class="input-text" placeholder="Имя" name="user_name" required>
-                        <input type="text" class="input-text" placeholder="Телефон" name="user_phone" required>
-                        <input type="submit" class="btn btn-submit" value="Отправить">
-                    </div>
-                </form>                
-            </div>
-        </div>
-        <div class="fance"></div>
-    </div>
-    <div class="section-common">
-       <div class="line-ground"></div>
-        <div class="container">
-            <div class="row">
-                <div class="product">
-                    <div class="col-sm-6">
-                        <div class="product-header">
-                            <div class="product__title">
-                                Деревянный забор
-                            </div>
-                            <div class="product__price">
-                                от 800 р/п.м
-                            </div>
-                        </div>
-                        <div class="product-description">
-                            <p>
-                                Материал - сосна. Высота 1,5-2м.<br>
-                                Столбы - металлический профиль 50х50см. Заглубление 1м.
-                            </p>
-                            <p>
-                                Варианты секций:<br>
-                                -сплошной<br>
-                                -с продухами
-                            </p>
-                            <p>
-                                Стоимость ворот - 6 000р, стоимость калитки 2 000р. <br>
-                                (прибавляется к общей стоимости забора)
-                            </p>
-                            <p>Гараетия 2 года</p>
-                        </div>
-                        
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="product-photo">
-                            <img src="img/pic/wood-fance.jpg" alt="деревянный забор" class="product__img">
-                        </div>
-                        <div class="product-btn">
-                            <button class="btn btn-order btn-wood-modal">Узнать цену</button>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="product-examples">
-                        <div class="product-examples__title">
-                            Примеры работ
-                        </div>
-                        <div class="examples">
-                            <a href="img/photos/fullsize/wood1.jpg" class="col-sm-3 col-xs-6 examples__item">
-                                <img src="img/photos/wood-1.jpg" alt="деревянный забор" class="examples__photo">
-                            </a>
-                            <a href="img/photos/fullsize/wood2.jpg" class="col-sm-3 col-xs-6 examples__item">
-                                <img src="img/photos/wood-2.jpg" alt="деревянный забор" class="examples__photo">
-                            </a>
-                            <a href="img/photos/fullsize/wood3.jpg" class="col-sm-3 col-xs-6 examples__item">
-                                <img src="img/photos/wood-3.jpg" alt="деревянный забор" class="examples__photo">
-                            </a>
-                            <a href="img/photos/fullsize/wood4.jpg" class="col-sm-3 col-xs-6 examples__item">
-                                <img src="img/photos/wood-4.jpg" alt="деревянный забор" class="examples__photo">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product">
-                    <div class="col-sm-6">
-                        <div class="product-header">
-                            <div class="product__title">
-                                Забор из металлопрофиля
-                            </div>
-                            <div class="product__price">
-                                от 1300 р/п.м
-                            </div>
-                        </div>
-                        <div class="product-description">
-                            <p>
-                                Толщина 0,4мм. Высота 1,5-2м.<br>
-                                Столбы - металлический профиль 50х50см. Заглубление 1м.
-                            </p>
-                            <p>
-                                Стоимость ворот - 8 000р, стоимость калитки 4 000р. <br>
-                                (прибавляется к общей стоимости забора)
-                            </p>
-                            <p>Гараетия 2 года</p>
-                        </div>
-                        
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="product-photo">
-                            <img src="img/pic/metall-fance.jpg" alt="забор из металлопрофиля" class="product__img">
-                        </div>
-                        <div class="product-btn">
-                            <button class="btn btn-order btn-metall-modal">Узнать цену</button>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="product-examples">
-                        <div class="product-examples__title">
-                            Примеры работ
-                        </div>
-                        <div class="product-examples__item">
-                            <div class="examples">
-                                <a href="img/photos/fullsize/metall1.jpg" class="col-sm-3 col-xs-6 examples__item">
-                                    <img src="img/photos/metall-1.jpg" alt="забор из металлопрофиля" class="examples__photo">
-                                </a>
-                                <a href="img/photos/fullsize/metall2.jpg" class="col-sm-3 col-xs-6 examples__item">
-                                    <img src="img/photos/metall-2.jpg" alt="забор из металлопрофиля" class="examples__photo">
-                                </a>
-                                <a href="img/photos/fullsize/metall3.jpg" class="col-sm-3 col-xs-6 examples__item">
-                                    <img src="img/photos/metall-3.jpg" alt="забор из металлопрофиля" class="examples__photo">
-                                </a>
-                                <a href="img/photos/fullsize/metall4.jpg" class="col-sm-3 col-xs-6 examples__item">
-                                    <img src="img/photos/metall-4.jpg" alt="забор из металлопрофиля" class="examples__photo">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product">
-                    <div class="col-sm-6">
-                        <div class="product-header">
-                            <div class="product__title">
-                                Забор сетка рабица
-                            </div>
-                            <div class="product__price">
-                                от 600 р/п.м
-                            </div>
-                        </div>
-                        <div class="product-description">
-                            <p>
-                                Высота 1,5-2м.<br>
-                                Столбы - металлический профиль 50х50см. Заглубление 1м.
-                            </p>
-                            <p>
-                                Варианты секций:<br>
-                                -сетка 50х50<br>
-                                -сетка 25х25<br>
-                                -сетка 16х16
-                            </p>
-                            <p>
-                                Стоимость ворот - 6 000р, стоимость калитки 2 000р. <br>
-                                (прибавляется к общей стоимости забора)
-                            </p>
-                            <p>Гараетия 2 года</p>
-                        </div>
-                        
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="product-photo">
-                            <img src="img/pic/rabica-fance.jpg" alt="забор сетка-рабица" class="product__img">
-                        </div>
-                        <div class="product-btn">
-                            <button class="btn btn-order btn-rabica-modal">Узнать цену</button>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="product-examples">
-                        <div class="product-examples__title">
-                            Примеры работ
-                        </div>
-                        <div class="product-examples__item">
-                            <div class="examples">
-                                <a href="img/photos/fullsize/rabica1.jpg" class="col-sm-3 col-xs-6 examples__item">
-                                    <img src="img/photos/rabica-1.jpg" alt="забор сетка-рабица" class="examples__photo">
-                                </a>
-                                <a href="img/photos/fullsize/rabica2.jpg" class="col-sm-3 col-xs-6 examples__item">
-                                    <img src="img/photos/rabica-2.jpg" alt="забор сетка-рабица" class="examples__photo">
-                                </a>
-                                <a href="img/photos/fullsize/rabica3.jpg" class="col-sm-3 col-xs-6 examples__item">
-                                    <img src="img/photos/rabica-3.jpg" alt="забор сетка-рабица" class="examples__photo">
-                                </a>
-                                <a href="img/photos/fullsize/rabica4.jpg" class="col-sm-3 col-xs-6 examples__item">
-                                    <img src="img/photos/rabica-4.jpg" alt="забор сетка-рабица" class="examples__photo">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    <footer class="footer">
-        <div class="container">
-            
-                <div class="row">
-                    <div class="footer-body">
-                        <h2 class="footer__title">
-                            &laquo;Группа компаний БАЙКАЛ&raquo;
-                        </h2>
-                        <div class="footer__text">
-                            <p class="footer__p">
-                                Опыт установки заборов 12 лет. <br>
-                                Более тысячи семей стали нашими счастливыми клиентами
-                            </p>
-                            <p class="footer__p">
-                                Качественный матерьял профессиональные работники <br>
-                                и ответсвенный подход к делу создали нам репутацию надежной компании.
-                            </p>
-                            <p class="center-text">
-                                Мы не делаем дешевые заборы - мы делаем качественные заборы
-                            </p>
-                            <p class="footer-contacts">
-                                <span class="footer-contacts__item">тел. 8(920)655-41-46</span>
-                                <span class="footer-contacts__item">г. Ярославль, пр-т Октября 123</span>
-                            </p>
-                        </div>
-                        <form class="form footer__form" id="questions">
-                            <div class="form-container">
-                                <div class="form__title">
-                                    Остались вопросы? Заполните поля и мы Вам перезвоним
-                                </div>
-                                <input type="text" class="input-text" placeholder="Имя" name="user_name" required>
-                                <input type="text" class="input-text" placeholder="Телефон" name="user_phone" required>
-                                <input type="submit" class="btn btn-submit" value="Отправить">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            
-        </div>
-        
-        <div class="fance"></div>
-    </footer>
-    
-    <!-- Modal -->
-        
-        <div class="popup mfp-hide" id="modal-callback">
-            <form class="form popup__form" id="callback">
-                <div class="form-container">
-                    <div class="form__title">
-                        Заполните информацию, наш менеджер свяжется с Вами.
-                    </div>
-                    <input type="text" class="input-text" placeholder="Имя" name="user_name" required>
-                    <input type="text" class="input-text" placeholder="Телефон" name="user_phone" required>
-                    <input type="submit" class="btn btn-submit" value="Отправить">
-                </div>
-            </form>
-        </div><!-- End Modal -->
-        
-        <div class="popup mfp-hide" id="modal-order-wood">
-            <form class="form popup__form" id="order-wood">
-                <div class="form-container">
-                    <div class="form__title">
-                        Заполните информацию, наш менеджер свяжется с Вами.
-                    </div>
-                    <input type="text" class="input-text" placeholder="Имя" name="user_name" required>
-                    <input type="text" class="input-text" placeholder="Телефон" name="user_phone" required>
-                    <input type="submit" class="btn btn-submit" value="Отправить">
-                </div>
-            </form>
-        </div><!-- End Modal -->
-        
-        <div class="popup mfp-hide" id="modal-order-metall">
-            <form class="form popup__form" id="order-metall">
-                <div class="form-container">
-                    <div class="form__title">
-                        Заполните информацию, наш менеджер свяжется с Вами.
-                    </div>
-                    <input type="text" class="input-text" placeholder="Имя" name="user_name" required>
-                    <input type="text" class="input-text" placeholder="Телефон" name="user_phone" required>
-                    <input type="submit" class="btn btn-submit" value="Отправить">
-                </div>
-            </form>
-        </div><!-- End Modal -->
-        
-        <div class="popup mfp-hide" id="modal-order-rabica">
-            <form class="form popup__form" id="order-rabica">
-                <div class="form-container">
-                    <div class="form__title">
-                        Заполните информацию, наш менеджер свяжется с Вами.
-                    </div>
-                    <input type="text" class="input-text" placeholder="Имя" name="user_name" required>
-                    <input type="text" class="input-text" placeholder="Телефон" name="user_phone" required>
-                    <input type="submit" class="btn btn-submit" value="Отправить">
-                </div>
-            </form>
-        </div><!-- End Modal -->
-        
-    <!-- End Modal -->
-    <!-- jQuery -->
-    <script src="js/jquery_1_12_4.min.js"></script>
-    <!-- Bootstrap's JavaScript plugins -->
-    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
-    <script src="libs/animate/animate-css.js"></script>
-    <script src="libs/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-    <script src="libs/parallax.js/parallax.min.js"></script>
-    <script src="js/plugins-scroll.js"></script>
-    <script src="js/maskedinput.js"></script>
-    
-    <script src="js/common.js"></script>
-    <script src="js/scripts.js"></script>
-    <script>
-        $(document).ready(function(){
-            
-            $('.btn-callback-modal').magnificPopup({
-              items: {
-                  src: '#modal-callback',
-                  type: 'inline'
-              }
-            });
-            
-	        $('.btn-wood-modal').magnificPopup({
-              items: {
-                  src: '#modal-order-wood',
-                  type: 'inline'
-              }
-            });
-            
-            $('.btn-metall-modal').magnificPopup({
-              items: {
-                  src: '#modal-order-metall',
-                  type: 'inline'
-              }
-            });
-            
-            $('.btn-rabica-modal').magnificPopup({
-              items: {
-                  src: '#modal-order-rabica',
-                  type: 'inline'
-              }
-            });
-            
-            $('.examples__item').magnificPopup({
-                type:'image',
-                gallery: {
-                    enabled: true,
-                    tCounter: '<span class="mfp-counter">%curr% из %total%</span>'
+                );
+            }
+        }
+        class Box extends React.Component {
+            constructor(){
+                super();
+                this.state = {
+                    toogle:  false
                 }
+            }
+            handlerClick(){
+                this.setState({toogle: !this.state.toogle});
+                if(this.state.toogle){
+                    console.log(1);
+                } else {
+                    console.log(0);
+                }
+            }
+            render() {
+                return (
+                    <div className="box" onClick={this.handlerClick.bind(this)}>{this.props.children}</div>
+                );
+            }
+        }
+        class IconRound extends React.Component {
+            render() {
+                return (
+                    <div className="icon-round" style={{ background: this.props.background }}></div>
+                );
+            }
+        }
+        ReactDOM.render(<App />, document.getElementById('main'));
+        (function($){
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                nav:true
             });
-            
-            $('.parallax-window').parallax({imageSrc: 'img/zaborbg.jpg'});
-            
-        });
+        })($);
+        
+        
     </script>
-  </body>
+    <script>
+        
+    </script>
+</body>
 </html>
