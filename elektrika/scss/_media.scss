@@ -1,0 +1,240 @@
+
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px){
+
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px){
+    .menu-nav{
+        & .burger{
+            display: block;
+            margin-left: 50px;
+            color: $text;
+            cursor: pointer;
+            font-size: 70px;
+            border: none;
+            background: transparent;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        &>ul{
+            display: none;
+            
+        }
+    }
+    .menu-nav>ul.mobile-nav{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: #fff;
+        z-index: -1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        height: 100vh;
+        padding: 15px;
+        margin-top: 50px;
+        &>li{
+            margin: 15px auto;
+            &>a{
+                font-size: 20px;
+            }
+        }
+    }
+    .ul-utp{
+        margin-bottom: 30px;
+        border-bottom: 2px solid $red;
+    }
+    .pluses{
+        flex-wrap: wrap;
+        &-left, &-right{
+            width: 60%;
+            margin-bottom: 30px;
+        }
+    }
+    .minus{
+        width: 35%;
+    }
+    .gallery-a{
+        margin-bottom: 30px;
+    }
+    .list-project{
+        padding: 15px 0;
+        border: none;
+        border-top: 2px solid $red;
+    }
+    .servisy-wrp{
+        text-align: center;
+    }
+    .servisy{
+        margin: 30px auto;
+    }
+    .form-bottom{
+        margin-top: 30px;
+    }
+    .screen-testimonials{
+        margin-top: 0;
+    }
+    .screen-testimonials .title-section{
+        margin-top: 50px;
+    }
+    .testimonials{
+        padding: 0;
+    }
+    .testimonial{
+        width: 49%;
+        margin: 15px 0;
+    }
+    .title-section{
+        margin: 45px auto 30px;
+    }
+    .address-bottom{
+        margin-bottom: 50px;
+        text-align: center;
+    }
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px){
+	/*Disable Animation on Mobile Devices*/
+    .animated{
+		/*CSS transitions*/
+		-o-transition-property: none !important;
+		-moz-transition-property: none !important;
+		-ms-transition-property: none !important;
+		-webkit-transition-property: none !important;
+		transition-property: none !important;
+		/*CSS transforms*/
+		-o-transform: none !important;
+		-moz-transform: none !important;
+		-ms-transform: none !important;
+		-webkit-transform: none !important;
+		transform: none !important;
+		/*CSS animations*/
+		-webkit-animation: none !important;
+		-moz-animation: none !important;
+		-o-animation: none !important;
+		-ms-animation: none !important;
+		animation: none !important;
+    }
+    
+    .menu-nav{
+        display: flex;
+        flex-grow: 2;
+        justify-content: flex-end;
+    }
+    .address-header{
+        display: none;
+    }
+    .minus{
+        width: 50%;
+    }
+    .minus>span{
+        width: 200px;
+    }
+    .testimonials{
+        justify-content: center;
+    }
+    .testimonial{
+        width: 80%;
+    }
+    .about-row{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .about-row .logo{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .about-row .item{
+        margin-bottom: 15px;
+    }
+    .pluses{
+        &-left, &-right{
+            width: 90%;
+        }
+    }
+    .logo-price{
+        position: relative;
+        text-align: center;
+    }
+    .title-price{
+        margin-bottom: 50px;
+    }
+    .price-dowload{
+        max-width: 90%;
+        margin-top: 50px;
+    }
+    .form-price{
+        display: none;
+    }
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px){
+    .form-input{
+        display: block;
+        width: 100%;
+    }
+    .minus{
+        width: 70%;
+    }
+    .minus>span{
+        width: 90%;
+    }
+    .gallery-row, .gallery-title{
+        text-align: center;
+        justify-content: center;
+    }
+    
+}
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 380px){
+
+    
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px){
+
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px){
+
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px){
+
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px){
+
+}
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px){
+
+}
