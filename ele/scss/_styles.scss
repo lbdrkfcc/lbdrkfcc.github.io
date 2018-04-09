@@ -68,7 +68,8 @@ button{
 
 .address-header{
     display: flex;
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 18px;
     flex-grow: 2;
     justify-content: flex-end;
@@ -216,12 +217,11 @@ button{
 }
 
 .title-section{
-    font-size: 20px;
+    font-size: 26px;
     width: 60%;
     color: $red;
-    margin: 80px auto 50px;
+    margin: 50px auto 50px;
     text-align: center;
-    font-size: 22px;
     font-weight: bold;
 }
 
@@ -241,7 +241,7 @@ button{
 }
 
 .pluses{
-    margin: 50px auto;
+    margin: 50px auto 30px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -377,7 +377,7 @@ button{
     &-title{
         font-weight: bold;
         margin-bottom: 30px;
-        font-size: 16px;
+        font-size: 18px;
         text-align: left;
         width: 100%;
     }
@@ -430,6 +430,7 @@ button{
     padding: 5px 10px;
     font-size: 20px;
     margin-bottom: 15px;
+    text-transform: uppercase;
     &:hover{
         color: #fff;
         text-decoration: none;
@@ -569,7 +570,7 @@ button{
     padding-bottom: 30px;
     border-bottom: 1px solid $grey;
     & .title-section{
-        margin-top: 150px;
+        margin-top: 130px;
     }
 }
 .testimonials{
@@ -655,6 +656,7 @@ button{
 .address-bottom{
     font-size: 18px;
     font-weight: bold;
+    margin-top: 30px;
 }
 
 /* price */
