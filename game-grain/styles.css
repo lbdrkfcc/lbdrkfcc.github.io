@@ -1,0 +1,133 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button{
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+button:focus{
+  outline: none;
+}
+
+.app{
+  position: relative;
+  height: 100vh;
+  font-family: sans-serif;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #eee;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.footer{
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.game-header{
+  padding: 0 1rem;
+  background-color: #ddd;
+  margin-bottom: 1rem;
+}
+.btn-menu{
+  display: inline-block;
+  padding: .5rem 1.5rem ;
+  text-align: center;
+  font-size: .9rem;
+  text-transform: lowercase;
+  color: #2a7fca;
+  text-decoration: none;
+}
+.btn-menu:active{
+  background-color: #bbb;
+}
+
+.game-resources{
+  width: 100%;
+  overflow: auto;
+}
+.game-year{
+  color: #ff8f00;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 5px 1rem;
+}
+.resources{
+  padding: 0 1rem;
+  list-style: none;
+}
+.resources>li{
+  padding: 3px 1rem;
+  font-size: .9rem;
+  position: relative;
+}
+.resources>li::before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #333;
+  top: 9px;
+  left: 4px;
+}
+.quest-text{
+  background: rgba(3,3,3,.5);
+  padding: 1rem 1rem .5rem;
+  color: #fff;
+  margin: 0 auto 5px;
+}
+.control-input{
+  padding: 0 1rem;
+}
+.game-input{
+  display: block;
+  width: 100%;
+  margin: 5px auto 0;
+  font-size: 1.1rem;
+  padding: 2px 5px;
+  border: 1px solid #2a7fca;
+  box-shadow: 0px 0px 1px 0px #2a7fca;
+}
+.game-input:focus{
+  outline: none;
+  /* border: 1px solid #2a7fca; */
+  /* box-shadow: 0px 0px 1px 0px #2a7fca; */
+}
+.control-numbers{
+  padding: 0 1rem;
+  display: flex;
+}
+.btn-num{
+  display: block;
+  width: 100%;
+  padding: 8px 5px;
+  background-color: transparent;
+}
+.btn-num:active{
+  background-color: #ddd;
+}
+.control-button{
+  border-top: 1px solid #ccc;
+}
+.btn-next{
+  display: block;
+  font-size: 1.1rem;
+  margin: .5rem auto 1rem;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  border: 2px solid #2a7fca;
+  border-radius: 100px;
+  color: #2a7fca;
+  background-color: transparent;
+  width: 70%;
+}
+.btn-next:active{
+  background-color: #ddd;
+}
