@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>яндекс-карта</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .container{
+            margin: auto;
+            padding: 15px;
+            max-width: 1120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="yamap">
+            <h2 class="yamap-title">Выберите ближайший автоцентр</h2>
+            <div class="yamap-head">
+                <ul class="yamap-head-list">
+                    <li><a href="#" class="ao" data-ao="cao" title="административный округ">ЦАО</a></li>
+                    <li><a href="#" class="ao" data-ao="sao" title="административный округ">САО</a></li>
+                    <li><a href="#" class="ao" data-ao="svao" title="административный округ">СВАО</a></li>
+                    <li><a href="#" class="ao" data-ao="vao" title="административный округ">ВАО</a></li>
+                    <li><a href="#" class="ao" data-ao="uvao" title="административный округ">ЮВАО</a></li>
+                    <li><a href="#" class="ao" data-ao="uao" title="административный округ">ЮАО</a></li>
+                    <li><a href="#" class="ao" data-ao="uzao" title="административный округ">ЮЗАО</a></li>
+                    <li><a href="#" class="ao" data-ao="zao" title="административный округ">ЗАО</a></li>
+                    <li><a href="#" class="ao" data-ao="szao" title="административный округ">СЗАО</a></li>
+                </ul>
+            </div>
+            <div class="yamap-body">
+                <div class="yamap-map">
+                    <div id="ya_map" style="width: 100%; height: 400px"></div>
+                </div>
+                <div class="yamap-list">
+                    <ul>
+                        <li data-ao="vao">
+                            <h4 class="list-title">Восточный АО</h4>
+                            <p class="list-text">
+                                1-ая ул. Измайловского Зверинца, д. 8 <br>
+                                ул. Амурская, 3 стр.32 (Гольяново) <br>        
+                                ул. Монтажная, 11 стр.2
+                            </p>
+                        </li>
+                        <li data-ao="uao">
+                            <h4 class="list-title">Южный АО</h4>
+                            <p class="list-text">
+                                Каширское шоссе, дом 10 корп.3 <br>
+                                ул. Дубининская, 76
+                            </p>
+                        </li>
+                        <li data-ao="zao">
+                            <h4 class="list-title">Западный АО</h4>
+                            <p class="list-text">
+                                Кутузовский проспект, 36, стр.15 <br>
+                                проспект Вернадского, 12д <br>
+                                Сколковское шоссе, 31 стр.9 <br>
+                                ул. Крылатская, 30 стр.3
+                            </p>
+                        </li>
+                        <li data-ao="cao">
+                            <h4 class="list-title">Центральный АО</h4>
+                            <p class="list-text">
+                                Михайловский проезд, д.1 стр.17
+                            </p>
+                        </li>
+                        <li data-ao="uzao">
+                            <h4 class="list-title">Юго-Западный АО</h4>
+                            <p class="list-text">
+                                Северное Чертаново, дом 5 корп.Д стр.7 <br>
+                                ул. Профсоюзная, 144 <br>
+                                ул. Шверника, 2 стр.4
+                            </p>
+                        </li>
+                        <li data-ao="svao">
+                            <h4 class="list-title">Северо-Восточный АО</h4>
+                            <p class="list-text">
+                                ул. Академика Королева, дом 8, корп.3 <br>
+                                ул. Поморская, 48А (Отрадное) 
+                            </p>
+                        </li>
+                        <li data-ao="sao">
+                            <h4 class="list-title">Северный АО</h4>
+                            <p class="list-text">
+                                ул. Балтийская, 11 (Сокол)
+                            </p>
+                        </li>
+                        <li data-ao="szao">
+                            <h4 class="list-title">Северо-Западный АО</h4>
+                            <p class="list-text">
+                                ул. Маршала Прошлякова, дом 6 стр.28 (Строгино)
+                            </p>
+                        </li>
+                        <li data-ao="uvao">
+                            <h4 class="list-title">Юго-Восточный АО</h4>
+                            <p class="list-text">
+                                ул. Привольная, 70 к.1 (Жулебино)
+                            </p>
+                        </li>
+                        <li data-ao="szao">
+                            <h4 class="list-title">Рядом с МКАД</h4>
+                            <p class="list-text">
+                                Балашиха <br>
+                                Путилковское шоссе, 1 (Куркино)
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        
+    </script>
+</body>
+</html>

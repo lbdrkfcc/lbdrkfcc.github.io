@@ -1,0 +1,158 @@
+.yamap{
+    
+}
+.yamap-title{
+    font-size: 2.2rem;
+    text-align: center;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+.yamap-head{
+    display: block;
+    width: 100%;
+    padding: 10px 15px 20px;
+}
+.yamap-head-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+}
+.yamap-head-list>li{
+    
+}
+.ao{
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+}
+.ao:hover{
+    text-decoration: none;
+    color: red;
+}
+.ao-active{
+    text-decoration: none;
+    color: red;
+}
+
+.yamap-body{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.yamap-map{
+    width: 60%;
+}
+
+.yamap-list{
+    width: 40%;
+    padding: 0px;
+    overflow: auto;
+}
+.yamap-list>ul{
+    list-style: none;
+}
+.yamap-list>ul>li{
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.yamap-list>ul>li:hover{
+    background: #fffce7;
+}
+.yamap-list .list-title{
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+    margin: 2px 0 5px;
+}
+.yamap-list .list-text{
+    font-size: 1rem;
+    color: #000;
+}
+
+.yamap-ballon{
+    background: #fff;
+    width: 260px;
+    position: relative;
+}
+.yamap-ballon-close{
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: auto;
+    padding: 0 15px;
+    z-index: 100;
+}
+.yamap-ballon-title{
+    background: #888;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 45px 15px 10px;
+    margin-bottom: 10px;
+}
+.yamap-ballon-block{
+    padding: 0 15px 10px;
+    color: #333;
+    font-size: .9rem;
+    margin-bottom: 5px;
+}
+.yamap-ballon-lable{
+    display: block;
+    color: #888;
+    margin-bottom: 3px;
+    font-size: .8rem;
+}
+.yamap-ballon-button, .yamap-ballon-button:hover{
+    width: 100%;
+    background: red;
+    padding: 3px 5px;
+    font-size: 18px;
+    border: none;
+    margin: 15px 0 0;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.yamap-ballon-arrow {
+    background: #fff;
+    position: relative;
+    width: 100px; 
+    height: 0;
+}
+ 
+.yamap-ballon-arrow::after {
+    content: ''; 
+    position: absolute;
+    left: 110px; 
+    top: 100%;
+    border: 20px solid transparent;	
+    border-top: 20px solid red;
+}
+.yamap-hide{
+    display: none;
+}
+
+@media only screen and (max-width : 992px){
+    .yamap-head-list{
+        display: none;
+    }
+    .yamap-head{
+        padding: 0;
+    }
+    .yamap-map{
+        width: 90%;
+        margin: auto;
+    }
+
+    .yamap-list{
+        display: none;
+    }
+}
