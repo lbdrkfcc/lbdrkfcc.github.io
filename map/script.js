@@ -3,6 +3,7 @@ $(function(){
     var geoData = [
         {
             ao: 'uao',
+            ao_name: 'Южный АО',
             coordinatesAO: [55.610906, 37.681479],
             type: 'Point',
             coordinates: [55.666315, 37.626349],
@@ -13,6 +14,7 @@ $(function(){
         },
         {
             ao: 'uao',
+            ao_name: 'Южный АО',
             coordinatesAO: [55.610906, 37.681479],
             type: 'Point',
             coordinates: [55.719957, 37.634595],
@@ -23,6 +25,7 @@ $(function(){
         },
         {
             ao: 'cao',
+            ao_name: 'Центральный АО',
             coordinatesAO: [55.753742, 37.615533],
             type: 'Point',
             coordinates: [55.731465, 37.685907],
@@ -33,6 +36,7 @@ $(function(){
         },
         {
             ao: 'vao',
+            ao_name: 'Восточный АО',
             coordinatesAO: [55.787710, 37.775631],
             type: 'Point',
             coordinates: [55.775241, 37.746229],
@@ -43,6 +47,7 @@ $(function(){
         },
         {
             ao: 'vao',
+            ao_name: 'Восточный АО',
             coordinatesAO: [55.787710, 37.775631],
             type: 'Point',
             coordinates: [55.809808, 37.763072],
@@ -53,6 +58,7 @@ $(function(){
         },
         {
             ao: 'vao',
+            ao_name: 'Восточный АО',
             coordinatesAO: [55.787710, 37.775631],
             type: 'Point',
             coordinates: [55.812929, 37.775263],
@@ -63,6 +69,7 @@ $(function(){
         },
         {
             ao: 'zao',
+            ao_name: 'Западный АО',
             coordinatesAO: [55.728003, 37.443533],
             type: 'Point',
             coordinates: [55.740745, 37.526411],
@@ -73,6 +80,7 @@ $(function(){
         },
         {
             ao: 'zao',
+            ao_name: 'Западный АО',
             coordinatesAO: [55.728003, 37.443533],
             type: 'Point',
             coordinates: [55.686421, 37.511948],
@@ -83,6 +91,7 @@ $(function(){
         },
         {
             ao: 'zao',
+            ao_name: 'Западный АО',
             coordinatesAO: [55.728003, 37.443533],
             type: 'Point',
             coordinates: [55.705975, 37.406226],
@@ -93,6 +102,7 @@ $(function(){
         },
         {
             ao: 'zao',
+            ao_name: 'Западный АО',
             coordinatesAO: [55.728003, 37.443533],
             type: 'Point',
             coordinates: [55.773894, 37.439697],
@@ -103,6 +113,7 @@ $(function(){
         },
         {
             ao: 'uzao',
+            ao_name: 'Юго-Западный АО',
             coordinatesAO: [55.662735, 37.576178],
             type: 'Point',
             coordinates: [55.637921, 37.588853],
@@ -113,6 +124,7 @@ $(function(){
         },
         {
             ao: 'uzao',
+            ao_name: 'Юго-Западный АО',
             coordinatesAO: [55.662735, 37.576178],
             type: 'Point',
             coordinates: [55.624347, 37.508292],
@@ -123,6 +135,7 @@ $(function(){
         },
         {
             ao: 'uzao',
+            ao_name: 'Юго-Западный АО',
             coordinatesAO: [55.662735, 37.576178],
             type: 'Point',
             coordinates: [55.693033, 37.578325],
@@ -133,6 +146,7 @@ $(function(){
         },
         {
             ao: 'svao',
+            ao_name: 'Северо-Восточный АО',
             coordinatesAO: [55.863833, 37.620366],
             type: 'Point',
             coordinates: [55.822185, 37.621543],
@@ -143,6 +157,7 @@ $(function(){
         },
         {
             ao: 'svao',
+            ao_name: 'Северо-Восточный АО',
             coordinatesAO: [55.863833, 37.620366],
             type: 'Point',
             coordinates: [55.870157, 37.573744],
@@ -153,6 +168,7 @@ $(function(){
         },
         {
             ao: 'sao',
+            ao_name: 'Северный АО',
             coordinatesAO: [55.838384, 37.525765],
             type: 'Point',
             coordinates: [55.809869, 37.513350],
@@ -163,6 +179,7 @@ $(function(){
         },
         {
             ao: 'szao',
+            ao_name: 'Северо-Западный АО',
             coordinatesAO: [55.829370, 37.451546],
             type: 'Point',
             coordinates: [55.790175, 37.397243],
@@ -173,6 +190,7 @@ $(function(){
         },
         {
             ao: 'uvao',
+            ao_name: 'Юго-Восточный АО',
             coordinatesAO: [55.692019, 37.754583],
             type: 'Point',
             coordinates: [55.677763, 37.854629],
@@ -183,6 +201,7 @@ $(function(){
         },
         {
             ao: 'szao',
+            ao_name: 'Северо-Западный АО',
             coordinatesAO: [55.829370, 37.451546],
             type: 'Point',
             coordinates: [55.871132, 37.399973],
@@ -193,6 +212,63 @@ $(function(){
         },
         
     ];
+    
+    var elem = $('.yamap-list>ul>li');
+    var listAO = [];
+    
+    function unique(arr) {
+      var result = [];
+        nextInput: 
+        for (var i = 0; i < arr.length; i++) {
+          var str = arr[i]; 
+          for (var j = 0; j < result.length; j++) { 
+            if (result[j] == str) continue nextInput; 
+          }
+          result.push(str);
+        }
+
+      return result;
+    }
+    
+    
+    
+    geoData.forEach(function(i,item,arr){
+        
+        if (listAO.includes(geoData[item].ao)) {
+            $('.yamap-list>ul').find('[data-ao='+geoData[item].ao+']').append('<a href="#" data-coordinates='+geoData[item].coordinates+'>'+geoData[item].content+'</a>');
+        } else {
+            listAO.push(geoData[item].ao);
+            listAO = unique(listAO);
+            
+            $('.yamap-list>ul').append('<li data-ao='+geoData[item].ao+'><h4 class="list-title">'+geoData[item].ao_name+'</h4>');
+            $('.yamap-list>ul').find('[data-ao='+geoData[item].ao+']').append('<a href="#" data-coordinates='+geoData[item].coordinates+'>'+geoData[item].content+'</a>');
+        }
+        
+        
+    });
+                    
+    console.log(listAO);
+    
+    geoData.forEach(function(i,item,arr){
+        
+        
+        
+        
+        
+        
+//        if( !tryAO() ){
+//            $('.yamap-list>ul>li').append('<a href="#">'+geoData[item].content+'</a><br>');
+//        } else {
+//            $('.yamap-list>ul').append('<li data-ao='+geoData[item].ao+'><h4 class="list-title">'+geoData[item].ao_name+'</h4>');
+//        }
+        
+    });
+    
+//    console.log( $('.yamap-list>ul>li') );
+    
+    
+    
+//    $('.yamap-list').html('addressList');
     
     ymaps.ready(init);
     var myMap;
@@ -378,42 +454,14 @@ $(function(){
             myMap.geoObjects.add(myCollection);
         });
         
-        $('.ao').click(function(){
-            $('.ao').removeClass('ao-active');
-            $(this).addClass('ao-active');
-            var elemData = $(this).data('ao');
-            myCollection.removeAll();
-            geoData.forEach(function(i,item,arr){
-                if(elemData == arr[item].ao){
-                    myPlacemark = new ymaps.Placemark(arr[item].coordinates,{
-                        balloonContent: getBallonContent(arr[item]),
-                    },{
-                        iconColor: 'red',
-                        balloonLayout: MyBalloonLayout,
-                        hideIconOnBalloonOpen: false
-                    });
-                    myCollection.add(myPlacemark);
-                    myMap.setCenter(arr[item].coordinatesAO, 10);
-                }
-            });
-            
-            $('.yamap-list>ul>li').each(function(){
-                if( $(this).data('ao') == elemData ){
-                    $(this).removeClass('yamap-hide');
-                } else {
-                    $(this).addClass('yamap-hide');
-                }
-            });
-            
-        });
         
-        $('.yamap-list>ul>li').click(function(){
-            $('.ao').removeClass('ao-active');
-            $(this).addClass('ao-active');
-            var elemData = $(this).data('ao');
+        $('.yamap-list>ul>li>a').click(function(){
+            
+            var elemData = $(this).data('coordinates');
+            console.log(elemData);
             myCollection.removeAll();
             geoData.forEach(function(i,item,arr){
-                if(elemData == arr[item].ao){
+                if(elemData == arr[item].coordinates){
                     myPlacemark = new ymaps.Placemark(arr[item].coordinates,{
                         balloonContent: getBallonContent(arr[item]),
                     },{
@@ -422,17 +470,17 @@ $(function(){
                         hideIconOnBalloonOpen: false
                     });
                     myCollection.add(myPlacemark);
-                    myMap.setCenter(arr[item].coordinatesAO, 10);
+                    myMap.setCenter(arr[item].coordinates, 10);
                 }
             });
             
-            $('.yamap-list>ul>li').each(function(){
-                if( $(this).data('ao') == elemData ){
-                    $(this).removeClass('yamap-hide');
-                } else {
-                    $(this).addClass('yamap-hide');
-                }
-            });
+//            $('.yamap-list>ul>li').each(function(){
+//                if( $(this).data('ao') == elemData ){
+//                    $(this).removeClass('yamap-hide');
+//                } else {
+//                    $(this).addClass('yamap-hide');
+//                }
+//            });
             
         });
         
