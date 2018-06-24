@@ -6,6 +6,17 @@ $(function(){
             ao_name: 'Южный АО',
             coordinatesAO: [55.610906, 37.681479],
             type: 'Point',
+            coordinates: [55.699198, 37.597235],
+            content: 'Канатчиковский проезд, 13 стр.3',
+            title: 'Автосервис в ЮАО',
+            time: '9:00 - 21:00',
+            phone: '8(495)380-10-10'
+        },
+        {
+            ao: 'uao',
+            ao_name: 'Южный АО',
+            coordinatesAO: [55.610906, 37.681479],
+            type: 'Point',
             coordinates: [55.666315, 37.626349],
             content: 'Каширское шоссе, дом 10 корп.3',
             title: 'Автосервис в ЮАО',
@@ -112,6 +123,17 @@ $(function(){
             phone: '8(495)380-10-10'
         },
         {
+            ao: 'zao',
+            ao_name: 'Западный АО',
+            coordinatesAO: [55.728003, 37.443533],
+            type: 'Point',
+            coordinates: [55.745681, 37.394709],
+            content: 'ул. Маршала Тимошенко, д.17 корп.1',
+            title: 'Автосервис в ЗАО',
+            time: '9:00 - 21:00',
+            phone: '8(495)380-10-10'
+        },
+        {
             ao: 'uzao',
             ao_name: 'Юго-Западный АО',
             coordinatesAO: [55.662735, 37.576178],
@@ -200,12 +222,23 @@ $(function(){
             phone: '8(495)380-10-10'
         },
         {
-            ao: 'szao',
-            ao_name: 'Северо-Западный АО',
+            ao: 'mkad',
+            ao_name: 'Рядом с МКАД',
             coordinatesAO: [55.829370, 37.451546],
             type: 'Point',
             coordinates: [55.871132, 37.399973],
             content: 'Путилковское шоссе, 1 (Куркино)',
+            title: 'Автосервис на МКАД',
+            time: '9:00 - 21:00',
+            phone: '8(495)380-10-10'
+        },
+        {
+            ao: 'mkad',
+            ao_name: 'Рядом с МКАД',
+            coordinatesAO: [55.829370, 37.451546],
+            type: 'Point',
+            coordinates: [55.784374, 37.868903],
+            content: 'Балашиха',
             title: 'Автосервис на МКАД',
             time: '9:00 - 21:00',
             phone: '8(495)380-10-10'
@@ -246,29 +279,8 @@ $(function(){
         
         
     });
-                    
-    console.log(listAO);
-    
-    geoData.forEach(function(i,item,arr){
-        
-        
-        
-        
-        
-        
-//        if( !tryAO() ){
-//            $('.yamap-list>ul>li').append('<a href="#">'+geoData[item].content+'</a><br>');
-//        } else {
-//            $('.yamap-list>ul').append('<li data-ao='+geoData[item].ao+'><h4 class="list-title">'+geoData[item].ao_name+'</h4>');
-//        }
-        
-    });
-    
-//    console.log( $('.yamap-list>ul>li') );
-    
-    
-    
-//    $('.yamap-list').html('addressList');
+
+
     
     ymaps.ready(init);
     var myMap;
@@ -426,15 +438,9 @@ $(function(){
             myCollection.add(myPlacemark);
         });
         myMap.geoObjects.add(myCollection);
-
         
-        $(document).click(function(e) {
+        function showAllMarcks(){
             
-            if ($(e.target).closest(".yamap").length || $(e.target).closest(".yamap-ballon-close").length){
-                return;
-            } 
-            $('.ao').removeClass('ao-active');
-            e.stopPropagation();
             
             myMap.setCenter([55.76, 37.64], 10);
             
@@ -452,11 +458,21 @@ $(function(){
                 myCollection.add(myPlacemark);
             });
             myMap.geoObjects.add(myCollection);
+        }
+
+        
+        $(document).click(function(e) {
+            if ($(e.target).closest(".yamap-body").length || $(e.target).closest(".yamap-ballon-close").length){
+                return;
+            } 
+            $('.ao').removeClass('ao-active');
+            e.stopPropagation();
+            showAllMarcks();
         });
         
         
-        $('.yamap-list>ul>li>a').click(function(){
-            
+        $('.yamap-list>ul>li>a').click(function(e){
+            e.preventDefault();
             var elemData = $(this).data('coordinates');
             console.log(elemData);
             myCollection.removeAll();
@@ -473,14 +489,6 @@ $(function(){
                     myMap.setCenter(arr[item].coordinates, 10);
                 }
             });
-            
-//            $('.yamap-list>ul>li').each(function(){
-//                if( $(this).data('ao') == elemData ){
-//                    $(this).removeClass('yamap-hide');
-//                } else {
-//                    $(this).addClass('yamap-hide');
-//                }
-//            });
             
         });
         

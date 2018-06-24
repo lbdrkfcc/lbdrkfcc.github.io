@@ -1,11 +1,16 @@
 .yamap{
-    
+    background: #fff;
+}
+.yamap-container{
+    max-width: 1170px;
+    margin: 0 auto;
 }
 .yamap-title{
     font-size: 2.2rem;
     text-align: center;
     padding: 0 15px;
     margin-bottom: 30px;
+    font-family: 'Open Sans', 'Helvetica', 'Arial', 'Lucida', sans-serif;
 }
 .yamap-head{
     display: block;
@@ -37,7 +42,7 @@
 
 .yamap-body{
     width: 100%;
-    height: 400px;
+    height: 650px;
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
@@ -60,6 +65,7 @@
 .yamap-list>ul>li{
     padding: 10px 15px;
     width: 50%;
+    font-family: 'Open Sans', 'Helvetica', 'Arial', 'Lucida', sans-serif;
 }
 .yamap-list>ul>li>a{
     font-size: .9rem;
@@ -67,6 +73,7 @@
     text-decoration: none;
     display: block;
     padding-bottom: 5px;
+    font-family: 'Open Sans', 'Helvetica', 'Arial', 'Lucida', sans-serif;
 }
 .yamap-list>ul>li>a:hover{
     color: red;
@@ -86,6 +93,7 @@
     background: #fff;
     width: 260px;
     position: relative;
+    font-family: 'Open Sans', 'Helvetica', 'Arial', 'Lucida', sans-serif;
 }
 .yamap-ballon-close{
     font-size: 40px;
@@ -120,10 +128,11 @@
 .yamap-ballon-button, .yamap-ballon-button:hover{
     width: 100%;
     background: red;
-    padding: 3px 5px;
+    padding: 10px 5px;
     font-size: 18px;
+    text-transform: uppercase;
     border: none;
-    margin: 15px 0 0;
+    margin: 5px 0 0;
     color: #fff;
     text-decoration: none;
     display: inline-block;
@@ -149,18 +158,25 @@
     display: none;
 }
 
+@media only screen and (max-width : 1200px){
+    
+    .yamap-map{
+        width: 60%;
+    }
+
+    .yamap-list{
+        width: 40%;
+    }
+    .yamap-list>ul>li{
+        width: 100%
+    }
+}
 @media only screen and (max-width : 992px){
-    .yamap-head-list{
-        display: none;
-    }
-    .yamap-head{
-        padding: 0;
-    }
+    
     .yamap-map{
         width: 90%;
         margin: auto;
     }
-
     .yamap-list{
         display: none;
     }
