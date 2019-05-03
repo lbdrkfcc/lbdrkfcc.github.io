@@ -1,22 +1,616 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MyGit</title>
+    <title>Google Font Select</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Cabin:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    
+    <link rel="stylesheet" id="googlefont1" href="">
+    <link rel="stylesheet" id="googlefont2" href="">
+    
     <style>
-        a{
-            padding:  5px 20px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            background: #fff;
+            line-height: 1.4;
+            font-family: 'Cabin', sans-serif;
+        }
+        
+        h1{
+            font-family: 'Ubuntu', sans-serif;
+            margin: 30px 0 10px;
+        }
+        
+        p{
+            font-family: 'Cabin', sans-serif;
+            font-size: 21px;
+            line-height: 1.4;
+        }
+        
+        .btn-clear{
+            outline: none;
+        }
+        
+        .side{
+            border-right: 1px solid #ccc;
+            width: 300px;
+            height: 100vh;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            transition: .5s;
+            background: #fff;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,.5);
+            color: #333;
+        }
+        
+        .side-dark{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            margin-left: 300px;
+            top: 0;
+            left: 0;
+            display: none;
+            background: rgba(0,0,0,.5);
+            transition: .5s;
+        }
+        
+        .side-btn{
+            position: absolute;
+            top: 0px;
+            left: 100%;
+            width: 30px;
+            height: 50px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        .side-btn:before{
+            content: "\2039";
+            font-size: 28px;
+            font-weight: bold;
+            color: #ccc;
+        }
+        
+        .side-close{
+            left: -300px;
+        }
+        .side-close .side-btn:before{
+            content: "\203A"
+        }
+        
+        .side-close .side-dark{
+            margin-left: 0;
+            opacity: 0;
+            width: 0;
+        }
+        
+        .side-container{
+            padding: 0 1rem;
+            overflow: auto;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        
+        .side-header{
+            margin: 15px auto;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .logo{
+            color: #ff6868;
+            text-decoration: none;
+            font-size: 24px;
+        }
+        .logo:hover{
+            color: #ff6868;
+            text-decoration: none;
+        }
+        .logo>span{
             font-size: 22px;
-            margin: 20px 15px;
+            font-weight: 100;
+            color: #555;
+        }
+        
+        .font-type{
+            font-weight: normal;
+            font-size: 19px;
+            margin: 20px 0 0;
+        }
+        
+        .select-input{
+            width: 100%;
+            line-height: 1.5;
+            font-size: 18px;
+            padding-left: 5px;
+            font-weight: normal;
+        }
+        
+        .content{
+            transition: .5s;
+            margin-left: 300px;
+            min-height: 100vh;
+            transition: .5s;
+            background: #fff;
+            color: #000;
+        }
+        .content-revers{
+            background: #000;
+            color: #fff;
+        }
+        
+        .header{
+            border-bottom: 1px solid #ccc;
+            height: 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+        }
+        
+        .header>.content{
+            text-align: center;
+            display: flex;
+            min-height: inherit;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .content-full{
+            margin-left: 0;
+        }
+        
+        .container{
+            margin: auto;
+            padding: 100px 1rem 0;
+            max-width: 600px;
+        }
+        
+        .langs{
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            width: 200px;
+        }
+        .langs-prev, .langs-next{
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            font-size: 26px;
+            color: #ccc;
+            height: 100%;
+            width: 100px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .langs-prev>span, .langs-next>span{
+            color: #ccc;
+            font-size: 16px;
+            padding: 0 5px;
+        }
+        .langs-prev{
+            right: 100%;
+            justify-content: flex-end;
+        }
+        .langs-next{
+            left: 100%;
+            justify-content: flex-start;
+        }
+        .langs-text{
+            font-size: 24px;
+            padding: 0 10px;
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+            white-space: nowrap;
+            margin: auto;
+        }
+        
+        .ff-row{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border-bottom: 1px solid #aaa;
+        }
+        .ff-row>.left, .ff-row>.right{
+            
+            padding: 0 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ff-row>.left{
+            justify-content: flex-end;
+            order: 1;
+        }
+        .ff-row>.right{
+            justify-content: flex-end;
+            order: 1;
+        }
+        .ff-row>.center{
+            font-size: 14px;
+            text-transform: uppercase;
+            flex-grow: 2;
+            border-right: 1px solid #aaa;
+            padding: 6px 0;
+        }
+        
+        .ff-row.row-top{
+            justify-content: flex-end;
+        }
+        
+        .ff-row>.row-center{
+            padding: 0 10px 0px;
+            font-size: 16px;
+            text-transform: lowercase;
+            justify-content: flex-end;
+        }
+        
+        label {
             display: inline-block;
-            background: #ddd;
+            cursor: pointer;
+            position: relative;
+            font-size: 13px;
+            width: 16px;
+            height: 16px;
+        }
+        
+        input[type=radio] {
+            display: none;
+        }
+        
+        .radiostyle {
+            content: "";
+            display: inline-block;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: #aaa;
+            border-radius: 100px;
+        }
+        
+        input[type=radio]:checked + .radiostyle{
+            background: #ff6868;
+        }
+        
+        .btn-option{
+            border: none;
+            background: transparent;
+            font-size: 45px;
+            padding: 0px 15px;
+            cursor: pointer;
+        }
+        .btn-option:before{
+            content: "\25D1"
+        }
+        
+        .wb:before{
+            content: "\25D0"
+        }
+        
+        
+        @media (max-width: 600px) {
+          .content {
+            margin-left: 0;
+          }
+          .side-dark{
+            display: block;
+          }
         }
     </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 </head>
+
 <body>
-    <a href="ele/index.html">elektrika</a>
-    <a href="mat/index.html">materialy</a>
-	<a href="game-grain/index.html">king-garain</a>
+    
+    <div class="header">
+            <div class="content">
+                <div class="langs">
+                    <div class="langs-text">Lorem ipsum</div>
+                    <div class="langs-prev"><span></span> &lsaquo;</div>
+                    <div class="langs-next">&rsaquo; <span></span></div>
+                </div>
+            </div>
+    </div>
+    <div class="side">
+        <div class="side-dark"></div>
+        <button class="btn-clear side-btn"></button>
+        <div class="side-container">
+            <div class="side-header">
+                <a href="#" class="logo">GFont<span>Combine</span></a>
+            </div>
+            <div class="side-body">
+               
+               <div class="view-options">
+                   <button class="btn-clear btn-option bw"></button>
+               </div>
+               <div class="font-filters">
+                   <div class="ff-row row-top">
+                       <div class="left row-center">
+                           &lt;h&gt;
+                       </div>
+                       <div class="right row-center">
+                           &lt;p&gt;
+                       </div>
+                   </div>
+                   <div class="ff-row">
+                       <div class="left">
+                           <input type="radio" name="title" value="serif">
+                       </div>
+                       <div class="center">
+                           Serif
+                       </div>
+                       <div class="right">
+                           <input type="radio" name="paragraph" value="serif">
+                       </div>
+                   </div>
+                   <div class="ff-row">
+                       <div class="left">
+                           <input type="radio" name="title" value="sans-serif">
+                       </div>
+                       <div class="center">
+                           Sans serif
+                       </div>
+                       <div class="right">
+                           <input type="radio" name="paragraph" value="sans-serif">
+                       </div>
+                   </div>
+                   <div class="ff-row">
+                       <div class="left">
+                           <input type="radio" name="title" value="display">
+                       </div>
+                       <div class="center">
+                           Display
+                       </div>
+                       <div class="right">
+                           <input type="radio" name="paragraph" value="display">
+                       </div>
+                   </div>
+                   <div class="ff-row">
+                       <div class="left">
+                           <input type="radio" name="title" value="handwriting">
+                       </div>
+                       <div class="center">
+                           Handwriting
+                       </div>
+                       <div class="right">
+                           <input type="radio" name="paragraph" value="handwriting">
+                       </div>
+                   </div>
+                   <div class="ff-row">
+                       <div class="left">
+                           <input type="radio" name="title" value="monospace">
+                       </div>
+                       <div class="center">
+                           Monospace
+                       </div>
+                       <div class="right">
+                           <input type="radio" name="paragraph" value="monospace">
+                       </div>
+                   </div>
+               </div>
+               <div class="font-selection">
+                   
+                   <div class="font-select">
+                     <h3 class="font-type">Titles</h3>
+                     <div class="select">
+                         <input id="title-font" class="select-input" list="titlefonts" value="Ubuntu">
+                          <datalist id="titlefonts">
+                          </datalist> 
+                    </div>
+                   </div>
+                   
+                   <div class="font-select">
+                     <h3 class="font-type">Paragraphs</h3>
+                     <div class="select">
+                         <input id="paragraph-font" class="select-input" list="paragraphfonts" value="Cabin">
+                          <datalist id="paragraphfonts">
+                          </datalist> 
+                    </div>
+                   </div>
+               </div>
+               
+               
+                
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container text-expl">
+<!--
+            <h1>Lorem ipsum dolor.</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique officia ipsam necessitatibus architecto corporis magnam ad suscipit? Assumenda alias, magni, cum suscipit ullam eum nulla. Hic nostrum eveniet repellat, facilis.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique officia ipsam necessitatibus architecto corporis magnam ad suscipit? Assumenda alias, magni, cum suscipit ullam eum nulla. Hic nostrum eveniet repellat, facilis.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique officia ipsam necessitatibus architecto corporis magnam ad suscipit? Assumenda alias, magni, cum suscipit ullam eum nulla. Hic nostrum eveniet repellat, facilis.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique officia ipsam necessitatibus architecto corporis magnam ad suscipit? Assumenda alias, magni, cum suscipit ullam eum nulla. Hic nostrum eveniet repellat, facilis.
+            </p>
+-->
+            <div class="result"></div>
+        </div>
+    </div>
+
+    <script src="google-fonts.js"></script>
+    <script>
+        $(function(){
+            
+            var titlecheked = 'sans-serif';
+            var paragraphcheked = 'sans-serif';
+            
+            var fontH = 'Ubuntu, sans-serif';
+            var fontP = 'Cabin, sans-serif';
+            
+            function renewDatalist(){
+                $('#titlefonts').empty();
+                $('#paragraphfonts').empty();
+                for(f in gf){
+                    if(gf[f].category == titlecheked){
+                        $('#titlefonts').append('<option value="'+f+'">');
+                    }
+                    if(gf[f].category == paragraphcheked){
+                        $('#paragraphfonts').append('<option value="'+f+'">');
+                    } 
+                }
+            }
+            
+            renewDatalist();
+            
+            $('input[type=radio]').wrap('<label></label>');
+            $('input[type=radio]').after('<div class="radiostyle"></div>');
+            
+            
+            $('input[type=radio][name=title][value=sans-serif]').prop("checked", true);
+            $('input[type=radio][name=paragraph][value=sans-serif]').prop("checked", true);
+            
+            
+            $('.bw').click(function(){
+                $('.content').toggleClass('content-revers');
+                $('.bw').toggleClass('wb')
+            });
+            
+            $(document).on('click','.side-btn',function(){
+                $('.side').toggleClass('side-close');
+                $('.content').toggleClass('content-full');
+            });
+            
+            $(document).on('change','input[type=radio]',function(){
+                titlecheked = $('input[type=radio][name=title]:checked').val();
+                paragraphcheked = $('input[type=radio][name=paragraph]:checked').val();
+                renewDatalist();
+            });
+            
+            
+            
+            $('#title-font').change(function(){
+                fontH = $('#title-font').val();
+                let fontplus = fontH.replace(/\s/g,"+");
+                
+                $('#googlefont1').attr('href','https://fonts.googleapis.com/css?family='+fontplus+':400,600;subset=cyrillic,cyrillic-ext,latin-ext');
+                $(document).find('h1').css('font-family', fontH+', '+titlecheked);
+            });
+            
+            $('#paragraph-font').change(function(){
+                fontP = $('#paragraph-font').val();
+                let fontplus = fontP.replace(/\s/g,"+");
+                
+                $('#googlefont2').attr('href','https://fonts.googleapis.com/css?family='+fontplus+':400,600;subset=cyrillic,cyrillic-ext,latin-ext');
+                $(document).find('p').css('font-family', fontP+', '+paragraphcheked);
+                
+                
+            });
+            
+            $('#title-font').dblclick(function(){
+                $('#title-font').val('');
+            });
+            $('#paragraph-font').dblclick(function(){
+                $('#paragraph-font').val('');
+            });
+            
+            
+            var textexpls = [
+                {
+                    title: 'Lorem',
+                    shorttitle: 'lorem',
+                    text: `<h1>Lorem ipsum dolor sit amet.</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>`
+                },
+                {
+                    title: 'Latin',
+                    shorttitle: 'lat',
+                    text: `<h1>On the other hand.</h1>
+                    <p>
+                        On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+                    </p>`
+                },
+                {
+                    title: 'Latin extended',
+                    shorttitle: 'lat ext',
+                    text: `<h1>Å andra sidan.</h1>
+                    <p>
+                        Å andra sidan fördömer vi med rättfärdig ilskning och ogillar människor som är så bedrövade och demoraliserade av det glädje av ögonblicket, så blint av önskan att de inte kan förutse den smärta och besvär som kommer att uppstå. och lika skyldighet tillhör dem som misslyckas i sin plikt genom viljans svaghet, vilket är detsamma som att säga genom att krympa från jobb och smärta. Dessa fall är helt enkla och lätta att skilja. På en ledig timme, när vår valkraft är otrammelad och när ingenting förhindrar att vi kan göra det vi gillar bäst, är allt nöje välkomnat och varje smärta undviks. Men under vissa omständigheter och på grund av påståenden om skyldighet eller affärsförpliktelser uppstår det ofta att nöjen måste repudieras och irriterande accepteras. Den vise mannen håller därför alltid i dessa frågor till denna princip av urval: han avvisar nöjen för att säkra andra större nöjen, annars ökar han smärtor för att undvika sämre smärtor.
+                    </p>`
+                },
+                {
+                    title: 'Cyrillic extended',
+                    shorttitle: 'cyr ext',
+                    text: `<h1>З іншого боку.</h1>
+                    <p>
+                        З іншого боку, ми засуджуємо праведним обуренням і не люблять чоловіків, яких так спокушають і деморалізують принади радості моменту, настільки засліплені бажанням, що вони не можуть передбачити біль і неприємності, які обов'язково настануть; і однакова вина відповідає тим, хто провалює свій обов'язок через слабкість волі, що є таким же, як кажуть через скорочення від праці і болю. Ці випадки абсолютно прості і легко розрізняються. У вільну годину, коли наша сила вибору не обмежена, і коли ніщо не заважає нашій здатності робити те, що нам подобається, кожне задоволення потрібно вітати і уникати кожного болю. Але за певних обставин і через вимоги про службові обов'язки або зобов'язання бізнесу часто трапляється, що задоволення повинні бути відкинуті, а досади - прийняті. Тому мудрець завжди дотримується цього принципу відбору: він відкидає задоволення, щоб забезпечити інші більші задоволення, інакше він переносить болі, щоб уникнути сильних болів.
+                    </p>`
+                },
+                {
+                    title: 'Cyrillic',
+                    shorttitle: 'cyr',
+                    text: `<h1>С другой стороны.</h1>
+                    <p>
+                        С другой стороны, мы осуждаем с праведным негодованием и не любим людей, которые настолько обольщены и деморализованы очарованием удовольствия момента, настолько ослеплены желанием, что они не могут предвидеть боль и неприятности, которые неизбежно последуют; и равная вина лежит на тех, кто не справляется со своими обязанностями из-за слабости воли, что равносильно тому, чтобы сказать, уклоняясь от тяжелого труда и боли. Эти случаи совершенно просты и легко различимы. В свободный час, когда наша сила выбора ничем не ограничена, и когда ничто не мешает нам делать то, что нам нравится больше всего, следует приветствовать каждое удовольствие и избегать каждой боли. Но в определенных обстоятельствах и в связи с требованиями долга или деловыми обязательствами часто случается так, что удовольствия должны быть отвергнуты, а неприятности приняты. Поэтому мудрец всегда придерживается в этих вопросах этого принципа отбора: он отвергает удовольствия, чтобы получить другие большие удовольствия, или же он терпит боли, чтобы избежать худших болей.
+                    </p>`
+                },
+                
+            ]
+            
+            $('.text-expl').html(textexpls[0].text);
+            $('.langs-text').html(textexpls[0].title);
+            $('.langs-prev>span').html(textexpls[textexpls.length-1].shorttitle);
+            $('.langs-next>span').html(textexpls[1].shorttitle);
+            
+            $('.langs-next').click(function(){
+                
+                let temp = textexpls.shift();
+                textexpls.push(temp);
+                
+                $('.text-expl').html(textexpls[0].text);
+                $('.langs-text').html(textexpls[0].title);
+                $('.langs-prev>span').html(textexpls[textexpls.length-1].shorttitle);
+                $('.langs-next>span').html(textexpls[1].shorttitle);
+                
+                $('h1').css('font-family',fontH);
+                $('p').css('font-family',fontP);
+            });
+            
+            $('.langs-prev').click(function(){
+                
+                let temp = textexpls.pop();
+                textexpls.unshift(temp);
+                
+                $('.text-expl').html(textexpls[0].text);
+                $('.langs-text').html(textexpls[0].title);
+                $('.langs-prev>span').html(textexpls[textexpls.length-1].shorttitle);
+                $('.langs-next>span').html(textexpls[1].shorttitle);
+                
+                $(document).find('h1').css('font-family',fontH);
+                $(document).find('p').css('font-family',fontP);
+            });
+            
+        });
+    </script>
 </body>
+
 </html>
