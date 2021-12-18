@@ -1,0 +1,9 @@
+/* @import url('./normalize.css'); */
+.nav-mobile .nav-link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.nav-mobile .nav-link{
+    font-size: .875em;
+}

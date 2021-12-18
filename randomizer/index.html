@@ -53,8 +53,71 @@
     </div>
 </nav>
 <div class="mt-5 py-2"></div>
-        Index layout
-
+        <div class="container">
+    <div class="row">
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="list-group mb-3">
+            <button type="button" class="list-group-item list-group-item-warning list-group-item-action">
+                <i class="bi bi-tools"></i> Активы
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">Безделушка</button>
+            <button type="button" class="list-group-item list-group-item-action">Вещь</button>
+            <button type="button" class="list-group-item list-group-item-action">Книга</button>
+            <button type="button" class="list-group-item list-group-item-action">Оружие</button>
+            <button type="button" class="list-group-item list-group-item-action">Услуга</button>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="list-group mb-3">
+            <button type="button" class="list-group-item list-group-item-warning list-group-item-action">
+                <i class="bi bi-magic"></i> Заклинания
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">Ритуал</button>
+            <button type="button" class="list-group-item list-group-item-action">Чары</button>
+        </div>
+        <div class="list-group mb-4">
+            <button type="button" class="list-group-item list-group-item-secondary list-group-item-action">
+                <i class="bi bi-lightning-fill"></i> Состояния
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">Безумие</button>
+            <button type="button" class="list-group-item list-group-item-action">Травма</button>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="list-group mb-3">
+            <button type="button" class="list-group-item list-group-item-primary list-group-item-action">
+                <i class="bi bi-stars"></i> Артефакт
+            </button>
+        </div>
+        <div class="list-group mb-3">
+            <button 
+            onclick="getRandomCard('ancients')"
+            type="button" 
+            class="list-group-item list-group-item-danger list-group-item-action">
+                <i class="bi bi-reddit"></i> Древний
+            </button>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="list-group mb-3">
+            <button 
+            onclick="getRandomCard('investigators')" 
+            type="button" 
+            class="list-group-item list-group-item-dark list-group-item-action">
+                <i class="bi bi-person-circle"></i> Сыщик 
+            </button>
+        </div>
+        <div class="list-group mb-3">
+            <button 
+            onclick="getRandomCard('clues')"
+            type="button" 
+            class="list-group-item list-group-item-success list-group-item-action">
+                <i class="bi bi-search"></i> Улика
+            </button>
+        </div>
+    </div>
+</div>
+</div>
 
         <div class="mb-5 py-4"></div>
 <nav class="navbar-dark bg-dark fixed-bottom d-sm-none">
