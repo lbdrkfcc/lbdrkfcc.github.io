@@ -7,3 +7,6 @@
 .nav-mobile .nav-link{
     font-size: .875em;
 }
+.card-img{
+    max-width: 150px;
+}

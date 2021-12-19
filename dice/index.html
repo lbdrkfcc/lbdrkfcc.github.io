@@ -55,43 +55,53 @@
 <div class="mt-5 py-2"></div>
         <div class="container">
     <div class="row my-3">
-    <div class="col">
-        <div class="row dices-statistics">
-            <div class="col"><span><i class="bi bi-dice-1"></i></span> - <span>0</span></div>
-            <div class="col"><span><i class="bi bi-dice-2"></i></span> - <span>0</span></div>
-            <div class="col"><span><i class="bi bi-dice-3"></i></span> - <span>0</span></div>
-            <div class="col"><span><i class="bi bi-dice-4"></i></span> - <span>0</span></div>
-            <div class="col"><span><i class="bi bi-dice-5"></i></span> - <span>0</span></div>
-            <div class="col"><span><i class="bi bi-dice-6"></i></span> - <span>0</span></div>
-        </div>
-    </div>
-</div>
-<div class="row my-4">
-    <div class="col">
-        <div class="dices">
-            <div class="dice">
-                <div class="spinner-grow text-light"></div>
+        <div class="col">
+            <div class="row dices-statistic">
+                <div class="col">
+                    <span class="ststistic-icon"><i class="bi bi-dice-1"></i></span> - <span class="ststistic-data">0</span>
+                </div>
+                <div class="col">
+                    <span class="ststistic-icon"><i class="bi bi-dice-2"></i></span> - <span class="ststistic-data">0</span>
+                </div>
+                <div class="col">
+                    <span class="ststistic-icon"><i class="bi bi-dice-3"></i></span> - <span class="ststistic-data">0</span>
+                </div>
+                <div class="col">
+                    <span class="ststistic-icon"><i class="bi bi-dice-4"></i></span> - <span class="ststistic-data">0</span>
+                </div>
+                <div class="col">
+                    <span class="ststistic-icon"><i class="bi bi-dice-5"></i></span> - <span class="ststistic-data">0</span>
+                </div>
+                <div class="col">
+                    <span class="ststistic-icon"><i class="bi bi-dice-6"></i></span> - <span class="ststistic-data">0</span>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col">
-        <div class="mb-3">
-            <div class="input-group mb-3">
-                <button onclick="oneDice()" class="btn btn-outline-secondary" type="button">1</button>
-                <button onclick="decreaseDice()" class="btn btn-outline-secondary px-4" type="button">-</button>
-                <input id="dice-input" type="number" class="form-control text-center" min="1" value="1">
-                <button onclick="increaseDice()" class="btn btn-outline-secondary px-4" type="button">+</button>
+    <div class="row my-4">
+        <div class="col">
+            <div class="dices">
+                <div class="dice">
+                    <div class="spinner-grow text-light"></div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col col-auto">
-        <button onclick="throwDice()" class="btn btn-primary" type="button">Бросить</button>
+    <div class="row">
+        <div class="col">
+            <div class="mb-3">
+                <div class="input-group mb-3">
+                    <button onclick="oneDice()" class="btn btn-outline-secondary" type="button">1</button>
+                    <button onclick="decreaseDice()" class="btn btn-outline-secondary px-4" type="button">-</button>
+                    <input id="dice-input" type="number" class="form-control text-center" min="1" value="1">
+                    <button onclick="increaseDice()" class="btn btn-outline-secondary px-4" type="button">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="col col-auto">
+            <button onclick="throwDice()" class="btn btn-primary" type="button">Бросить</button>
+        </div>
     </div>
-</div>
-
-
 </div>
 
         <div class="mb-5 py-4"></div>
@@ -127,16 +137,16 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <div class="text-center">
-                <img id="modal-img" src="https://via.placeholder.com/150" class="rounded" alt="pic">
-                <h5 id="modal-title" class="h5 mt-3">...</h5>
-                <h6 class="h6 text-muted">...</h6>
-                <p class="p">...</p>
+            <div class="modal-card text-center">
+                <img class="card-img" src="https://via.placeholder.com/150" class="rounded" alt="pic">
+                <h5 class="card-title h5 mt-3">...</h5>
+                <h6 class="card-subtitle h6 text-muted">...</h6>
+                <p class="card-text p">...</p>
             </div>
         </div>
         <div class="modal-footer justify-content-between">
-            <button id="modal-btn-repeat" type="button" class="btn btn-secondary">
-                <i class="bi bi-arrow-repeat"></i> Ещё раз
+            <button type="button" class="btn btn-secondary btn-repeat">
+                <i class="bi bi-arrow-repeat"></i> уже есть
             </button>
             <button type="button" class="btn btn-success" data-bs-dismiss="modal">ОК</button>
         </div>
@@ -146,5 +156,9 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="/js/main.js"></script>
+    
+    
+        <script src="/js/dice.js"></script>
+    
 </body>
 </html>
