@@ -57,55 +57,80 @@
     <div class="row my-3">
         <div class="col">
             <div class="row dices-statistic">
-                <div class="col">
-                    <span class="ststistic-icon"><i class="bi bi-dice-1"></i></span> - <span class="ststistic-data">0</span>
-                </div>
-                <div class="col">
-                    <span class="ststistic-icon"><i class="bi bi-dice-2"></i></span> - <span class="ststistic-data">0</span>
-                </div>
-                <div class="col">
-                    <span class="ststistic-icon"><i class="bi bi-dice-3"></i></span> - <span class="ststistic-data">0</span>
-                </div>
-                <div class="col">
-                    <span class="ststistic-icon"><i class="bi bi-dice-4"></i></span> - <span class="ststistic-data">0</span>
-                </div>
-                <div class="col">
-                    <span class="ststistic-icon"><i class="bi bi-dice-5"></i></span> - <span class="ststistic-data">0</span>
-                </div>
-                <div class="col">
-                    <span class="ststistic-icon"><i class="bi bi-dice-6"></i></span> - <span class="ststistic-data">0</span>
-                </div>
+                
+                    <div class="col d-flex flex-column text-center">
+                        <span class="ststistic-icon">
+                            <i class="bi bi-dice-1"></i>
+                        </span>
+                        <span class="ststistic-data ststistic-data-1">0</span>
+                    </div>
+                
+                    <div class="col d-flex flex-column text-center">
+                        <span class="ststistic-icon">
+                            <i class="bi bi-dice-2"></i>
+                        </span>
+                        <span class="ststistic-data ststistic-data-2">0</span>
+                    </div>
+                
+                    <div class="col d-flex flex-column text-center">
+                        <span class="ststistic-icon">
+                            <i class="bi bi-dice-3"></i>
+                        </span>
+                        <span class="ststistic-data ststistic-data-3">0</span>
+                    </div>
+                
+                    <div class="col d-flex flex-column text-center">
+                        <span class="ststistic-icon">
+                            <i class="bi bi-dice-4"></i>
+                        </span>
+                        <span class="ststistic-data ststistic-data-4">0</span>
+                    </div>
+                
+                    <div class="col d-flex flex-column text-center">
+                        <span class="ststistic-icon">
+                            <i class="bi bi-dice-5"></i>
+                        </span>
+                        <span class="ststistic-data ststistic-data-5">0</span>
+                    </div>
+                
+                    <div class="col d-flex flex-column text-center">
+                        <span class="ststistic-icon">
+                            <i class="bi bi-dice-6"></i>
+                        </span>
+                        <span class="ststistic-data ststistic-data-6">0</span>
+                    </div>
+                
             </div>
         </div>
     </div>
     <div class="row my-4">
         <div class="col">
-            <div class="dices">
-                <div class="dice">
-                    <div class="spinner-grow text-light"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="mb-3">
-                <div class="input-group mb-3">
-                    <button onclick="oneDice()" class="btn btn-outline-secondary" type="button">1</button>
-                    <button onclick="decreaseDice()" class="btn btn-outline-secondary px-4" type="button">-</button>
-                    <input id="dice-input" type="number" class="form-control text-center" min="1" value="1">
-                    <button onclick="increaseDice()" class="btn btn-outline-secondary px-4" type="button">+</button>
-                </div>
-            </div>
-        </div>
-        <div class="col col-auto">
-            <button onclick="throwDice()" class="btn btn-primary" type="button">Бросить</button>
+            <div class="dices d-flex flex-wrap"></div>
         </div>
     </div>
 </div>
 
         <div class="mb-5 py-4"></div>
 <nav class="navbar-dark bg-dark fixed-bottom d-sm-none">
+    
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <div class="input-group mb-3">
+                            <button onclick="oneDice()" class="btn btn-outline-secondary" type="button">1</button>
+                            <button onclick="decreaseDice()" class="btn btn-outline-secondary px-4" type="button">-</button>
+                            <input id="dice-input" type="number" class="form-control text-center" min="1" value="1">
+                            <button onclick="increaseDice()" class="btn btn-outline-secondary px-4" type="button">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-auto">
+                    <button onclick="throwDice()" class="btn btn-primary" type="button">Бросить</button>
+                </div>
+            </div>
+        </div>
+    
     <ul class="nav nav-fill nav-mobile">
         <li class="nav-item">
     <a class="nav-link link-success" href="/info">

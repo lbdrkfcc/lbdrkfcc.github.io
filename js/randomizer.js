@@ -45,7 +45,7 @@ function getRandomCard(categoryName, filter = ''){
     let modalTitle = modal.querySelector('.card-title')
     let modalSubtitle = modal.querySelector('.card-subtitle')
 
-    if(randomItem && randomItem.img) modalImg.src = `/imgs/${categoryName}/${randomItem.img}.png`
+    if(randomItem && randomItem.img) modalImg.src = `/imgs/${categoryName}/${randomItem.img}.jpg`
     if(randomItem && randomItem.title) modalTitle.innerText = randomItem.title
     if(randomItem && randomItem.subtitle) modalSubtitle.innerText = randomItem.subtitle
     modal.querySelector('.btn-repeat').onclick = function(){ getRandomCard(categoryName, filter) }
